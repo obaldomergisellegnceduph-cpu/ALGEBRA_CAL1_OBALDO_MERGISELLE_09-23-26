@@ -1,0 +1,74 @@
+# ALGEBRA_CAL1_OBALDO_MERGISELLE_09-23-26
+
+import math
+
+a = 9
+b = 7
+c = 4
+x = 6
+
+# Given function
+def f(x):
+    return a * (x ** 2) + b * x + c
+
+print("f(x) =", a, "x² +", b, "x +", c)
+print("x =", x)
+print("f(x) =", f(x))
+
+# 1. Solve linear equation ax + b = c
+print("\n1. Linear equation: ax + b = c")
+print(f"{a}x + {b} = {c}")
+
+if a == 0:
+    if b == c:
+        print("Infinite solutions")
+    else:
+        print("No solution")
+else:
+    x_linear = (c - b) / a
+    print("x =", x_linear)
+
+# 2. Solve quadratic equation ax² + bx + c = 0
+print("\n2. Quadratic equation: ax² + bx + c = 0")
+print(f"{a}x² + {b}x + {c} = 0")
+
+discriminant = b ** 2 - 4 * a * c
+print("Discriminant =", discriminant)
+
+if discriminant > 0:
+    root1 = (-b + math.sqrt(discriminant)) / (2 * a)
+    root2 = (-b - math.sqrt(discriminant)) / (2 * a)
+    print("Two real roots:")
+    print("x1 =", root1)
+    print("x2 =", root2)
+elif discriminant == 0:
+    root = -b / (2 * a)
+    print("One real root:")
+    print("x =", root)
+else:
+    real_part = -b / (2 * a)
+    imag_part = math.sqrt(-discriminant) / (2 * a)
+    print("No real roots")
+    print("Complex roots:")
+    print(f"x1 = {real_part} + {imag_part}i")
+    print(f"x2 = {real_part} - {imag_part}i")
+
+# 3. Evaluate f(x) at given x
+print("\n3. Evaluate f(x) at x =", x)
+print("f(x) =", f(x))
+
+# 4. Derivative f'(x) and value at given x
+print("\n4. Derivative f'(x)")
+print("f'(x) =", 2 * a, "x +", b)
+derivative_at_x = 2 * a * x + b
+print("f'(" + str(x) + ") =", derivative_at_x)
+
+# 5. Limit as x approaches given value
+print("\n5. Limit as x approaches", x)
+print("lim f(x) =", f(x))
+
+# 6. Definite integral from 0 to given x
+print("\n6. Definite integral from 0 to", x)
+integral = (a / 3) * (x ** 3) + (b / 2) * (x ** 2) + c * x
+print("∫ f(x) dx =", integral)
+
